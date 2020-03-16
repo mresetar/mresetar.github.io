@@ -56,6 +56,11 @@ instagram:
   urlTemplate: "https://www.instagram.com/{value}"
   icon: "fa-instagram"
 
+flickr:
+  name: Flickr
+  urlTemplate: "https://www.flickr.com/photos/{value}/"
+  icon: "fa-flickr"
+
 youtube:
   name: "YouTube"
   urlTemplate: "https://www.youtube.com/{value}"
@@ -89,3 +94,5 @@ yelp:
   name: "Yelp"
   urlTemplate: "https://{value}.yelp.com"
   icon: "fa-yelp"
+
+
