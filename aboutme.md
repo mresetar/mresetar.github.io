@@ -1,16 +1,19 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Cogito, ergo sum
+site.avatar: uploads/gravatar.jpeg
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+![Gravatar](uploads/gravatar.jpeg) 
+### Miroslav Rešetar
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Java programmer, middleware integration specialist.
+Employed by [CROZ](https://croz.net) as software development consultant. 
+Holder of 12 IBM industrial certificates.
+IBM Champion for the Cloud for the 2018, 2019 and 2020.
 
-What else do you need?
+ - [Acclaim badges](https://www.youracclaim.com/users/miroslav-resetar.5870effa)
+ - [LinkedIn profile](https://www.linkedin.com/in/mresetar/)
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Here I will post some notes that might help you but, more often then not, myself when I forgot the same in the future. 

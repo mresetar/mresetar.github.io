@@ -1,10 +1,10 @@
 # --- General options --- #
 
 # Name of website
-title: My website
+title: Miroslav Rešetar; Integration, Automation and Development
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: My journeys in the integration, automation and development
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -20,15 +20,13 @@ description: A virtual proof that I'm awesome
 
 # List of links in the navigation bar
 navbar-links:
+  My blogs @ CROZ: "https://croz.net/author/miroslav-resetar/"
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://deanattali.com"
+  #Author's home: "https://mresetar.github.io"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+#avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -38,14 +36,14 @@ avatar: "/img/avatar-icon.png"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
+navbar-col: "#5b5b5b"
+navbar-text-col: "#c9c19f"
+navbar-children-col: "#5b5b5b"
 page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
+link-col: "#c9c19f"
+hover-col: "#7d7c7a"
+footer-col: "#5b5b5b"
+footer-text-col: "#c9c19f"
 footer-link-col: "#404040"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
@@ -60,7 +58,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Miroslav Rešetar
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -68,12 +66,12 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
+  email: "${github-username}@gmail.com"
+#  facebook: deanattali
+  github: mresetar
+  twitter: MiroslavResetar
 #  reddit: yourname
-#  linkedin: daattali
+  linkedin: mresetar
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -88,12 +86,13 @@ social-network-links:
 # Select which share links to show in posts
 share-links-active:
   twitter: true
-  facebook: true
+  #facebook: true
   linkedin: true
+
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+#url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -101,7 +100,7 @@ url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 #gtag: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-160705402-1"
 
 # Google Tag Manager ID
 #gtm: ""
@@ -156,11 +155,11 @@ date_format: "%B %-d, %Y"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "Europe/Zagreb"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+paginate: 10
 
 kramdown:
   input: GFM
