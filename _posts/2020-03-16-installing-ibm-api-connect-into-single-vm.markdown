@@ -7,7 +7,7 @@ tags: [apiconnect, vagrant, croz]
 
 # Want to Run API Connect Locally?
 
-I've written comprehensive blog how API Connect 2018 can be installed on the local machine. 
+I've written comprehensive blog post how API Connect 2018 can be installed on the local machine. 
  
  - Blog entry is available [here](https://croz.net/news/installing-api-connect-into-single-virtual-machine/)
  - [GitHub repository](https://github.com/croz-ltd/ibm-api-connect) to automate the process

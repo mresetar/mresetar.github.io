@@ -20,7 +20,11 @@ description: My journeys in the integration, automation and development
 
 # List of links in the navigation bar
 navbar-links:
-  My blogs @ CROZ: "https://croz.net/author/miroslav-resetar/"
+  Tags: tags
+  See Also:
+    - My blogs at CROZ: "https://croz.net/author/miroslav-resetar/"
+    - Old Medium blog: "https://medium.com/@MiroslavResetar"
+    - Very old Blogspot blog: "http://mresetar.blogspot.com/"
   About Me: "aboutme"
   #Author's home: "https://mresetar.github.io"
 
