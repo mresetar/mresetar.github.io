@@ -11,7 +11,7 @@ description: My journeys in the integration, automation and development
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-#url: "https://example.com"
+url: "https://mresetar.github.io"
 
 # baseurl should be an empty string
 #baseurl: ""
@@ -20,7 +20,7 @@ description: My journeys in the integration, automation and development
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: ""
+  Blog: "https://mresetar.github.io"
   Blogs at CROZ: "https://croz.net/author/miroslav-resetar/"
   Tags: tags
   Archive:
