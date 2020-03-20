@@ -32,9 +32,10 @@ RUN for i in {1..10}; do cp jq-linux64 "jq-linux64-${i}"; done
 RUN chmod +x jq-linux64 && mv jq-linux64 /usr/local/bin/jq && rm -f jq-linux64-*
 ```
 
-Basically, we will have 4 layers here:
+Basically, we will have 5 layers here:
 
  1. FROM layer with `ubi-minimal` image
+ 1. Setting the Workdir. This will be empty layer.
  1. Download of `curl` from Github
  1. Simulating some _install_ work by copying image 10 times. This is to show some significant increase in size. 
  1. Adding execute permission and moving one copy to `bin` directory. Removing all the copies from step before.
@@ -74,9 +75,14 @@ sha256:082938f7edb4059fdbc633c 7 weeks ago                                      
 <missing>                      7 weeks ago                                                                                            81.3MB   Imported from -
 ```
 
-To recapitulate, base layer is 81.3MB next is 6.94kB, setting workdir is 0B. 
-Downloading curl is 3.97MB layer which is almost exact the size of `jq`. Copying `jq` 10 times is about 39.5MB. 
-Moving `jq` to bin is 3.95MB. 
+To recapitulate, we go from bottom to top. 
+
+ - Layer 0: Imported image with 81.3MB.
+ - Layer 1: FROM instruction layer is 6.94kB.
+ - Layer 2: setting workdir is 0B. 
+ - Layer 3: downloading curl is 3.97MB. Almost exact the size of `jq`. 
+ - Layer 4: Copying `jq` 10 times is about 39.5MB. 
+ - Layer 5: Moving `jq` to bin is 3.95MB. 
 
 Inspecting image gives us the total size of the image. 129 megabytes.
 
@@ -88,8 +94,7 @@ ubi-minimal-jq-large                          latest                            
 
 Lets try to build the same image using `--squash` experimental feature. How to turn it on is [here](https://mresetar.github.io/2020-03-18-how-to-enable-docker-experimental-mode-on-windows/).
 
-Let's try to build the same image but this time with the `--squash` option: 
-`docker build --squash -t ubi-minimal-jq-squashed .`.
+Build command looks like: `docker build --squash -t ubi-minimal-jq-squashed .`.
 
 To inspect the layers of the squashed image we run the following: `docker history --no-trunc ubi-minimal-jq-squashed`.
 
@@ -104,7 +109,7 @@ sha256:fc22c63ae312bd0df637d24fae5d440f9141d14c2638781f27183aaf37cd920a   11 hou
 <missing>                                                                 7 weeks ago                                                                                                   81.3MB              Imported from -
 ```
 
-In squashed image we see that all the layer in between the FROM and last layers are with size of 0B. If we look
+In squashed image we see that all the layers in between the FROM and last layers are with size of 0B. If we look
 at the resulting image size (`docker images | grep ubi-minimal-jq-squashed`) it is 85.3MB.
 
 ```
@@ -114,11 +119,11 @@ ubi-minimal-jq-squashed                       latest                            
 So we decreased image size from 129 to 85.3 megabytes. Save of almost 44 megabytes or 33 percent.
 
 But it comes with price, right? Right. All of the Dockerfile in-between layers are lost and can't be reused 
-between images. But, if what we are building is our base image we aren't really concerned with those. 
+between images. But if we wan't as small image, treadoff is worth it. 
 
 ### How To Tell That Image Was Squashed?
 
 There is one indicator that will tell you that image was squashed when built. 
-We can take a look into the comment of the top layer in the image history. If it has keywords like `merge` and `to`, 
+We can take a look into the comment of the top layer. If it has keywords like `merge` and `to`, 
 e.g. `merge sha256:51ba9d9e57128c08762feb57527f1e357b598f04718d045e3ad285910dc4dc19 to sha256:082938f7edb4059fdbc633cca93085b09a27774908d0a35327deadeee174cde0` and layers below are size of 0 bytes, image 
 was squashed. 
