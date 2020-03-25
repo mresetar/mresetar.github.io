@@ -1,0 +1,8 @@
+.intro-header.big-img .post-heading .post-meta, 
+.intro-header.big-img .post-heading h1,
+.intro-header.big-img .post-heading h2 {
+  /* --- color: #404040; --- */
+  /* color: #c9c19f; */
+  background-color: #5b5b5b;
+  opacity: 0.75;
+}
