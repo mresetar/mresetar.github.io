@@ -123,7 +123,7 @@ Functionality that you will probably need are:
  [Defensive Bash Scripting](#defensive)
 
 Your starting point might look like one below.
-I will make this script available at [this link](../code/bash.sh).
+I will make this script available at [this link](https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash.sh).
 
 
 ```bash
@@ -181,12 +181,12 @@ main "$@"
 # Creating New Script Using Alias
 
 To make life easier for yourself you can create an alias (or better a function) for this action.
-I've created 2 functions for the creation of a minimal script and one for CLI tool. Functions are available 
-[here](http://mresetar.github.com/code/bash-func.sh). 
+I've created 2 functions for the creation of a minimal script and one for CLI tool. Functions are available
+[here](https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash-func.sh).
 To add the functions to your `~/.bashrc` you can use this line:
 
 ```bash
-curl -s http://mresetar.github.com/code/bash-func.sh | tee -a ~/.bashrc
+curl -s https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash-func.sh | tee -a ~/.bashrc
 ```
 
 After launching a new Bash terminal you could use them with `bash-min` and `bash-cli` commands. e.g.
@@ -203,6 +203,16 @@ Usage:
 
 Example:
   ./cli.sh -p param1
+```
+
+### Summary
+
+ - Link for simple Bash script starter: [download minimal script](https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash-min.sh)
+ - Link for more complex CLI Bash script starter: [download script](https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash.sh)
+ - Add both scripts to the `~/.bashrc` to use them as `bash-min <new_file>` and `bash-cli <new_file>`:
+
+```bash
+curl -s https://raw.githubusercontent.com/mresetar/mresetar.github.io/master/code/bash-func.sh | tee -a ~/.bashrc
 ```
 
 I wish you safe and pleasant shell scripting :)
